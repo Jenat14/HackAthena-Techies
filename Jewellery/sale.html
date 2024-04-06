@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ownership Transfer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+	<style>
+	body {
+		background-color: rgba(0, 0, 0, 0.816);
+	  }
+	  .login {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	  }
+	  .text-container {
+		margin-top: 100px;
+		width: fit-content;
+	  }
+	  
+	  .nav-link {
+		color: #ffc107;
+	  }
+	  .nav-link:hover {
+		color: whitesmoke;
+	  }
+	  
+	  .form-group {
+		margin-bottom: 20px;
+	  }
+	  
+	  label {
+		display: block;
+		margin-bottom: 8px;
+	  }
+	  
+	  input {
+		width: 100%;
+		padding: 8px;
+		box-sizing: border-box;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+	  }
+	  
+	  button {
+		width: 34%;
+		padding: 10px;
+		background-color: gold;
+		color: #fff;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+	  }
+	  
+	  button:hover {
+		background-color: whitesmoke;
+		border: 1px solid #ffc107;
+		span {
+		  color: #ffc107;
+		}
+	  }
+	  h2 {
+		margin-bottom: 40px;
+		margin-top: 0px;
+	  }
+	  .container-nav {
+		margin-bottom: 50px;
+	  }
+	  .row {
+		overflow: hidden;
+		width: 100%;
+	  }
+	  .ver-btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 20px;
+	  }
+	  
+	  .modal {
+		display: none; 
+		position: fixed; 
+		z-index: 1; 
+		left: 0;
+		top: 0;
+		width: 100%; 
+		height: 100%; 
+		overflow: auto; 
+		background-color: rgba(0, 0, 0, 0.4); 
+	  }
+	  
+	  
+	  .modal-content {
+		background-color: #fefefe;
+		margin: 15% auto; 
+		padding: 20px;
+		border: 1px solid #888;
+		width: 80%; 
+		border-radius: 10px;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	  }
+	  
+	  
+	  .close {
+		color: #aaa;
+		float: right;
+		font-size: 28px;
+		font-weight: bold;
+	  }
+	  
+	  .close:hover,
+	  .close:focus {
+		color: black;
+		text-decoration: none;
+		cursor: pointer;
+	  }
+	  
+	  @media screen and (max-width: 700px) {
+		.modal-content {
+			width: 90%;
+		}
+	  }
+	</style>  
+</head>
+<body>
+    <div class="container mb-5">
+        <header
+          class="d-flex flex-wrap justify-content-center py-3 border-bottom"
+        >
+          <a
+            href="/"
+            class="d-flex align-items-center mb-2 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+          >
+            <span class="fs-4" style="color: #ffc107">Jewellery Name</span>
+          </a>
+    
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a href="../Homelogin/Homelogin.html" class="nav-link" aria-current="page">Home</a>
+            </li>
+            <li class="nav-item"><a href="new_reg.html" class="nav-link">Register</a></li>
+            <li class="nav-item"><a href="owner_trans.html" class="nav-link">Ownership</a></li>
+          </ul>
+        </header>
+      </div>
+    
+        
+              
+            <div class="container card col-md-4 p-4">
+                <h2>Current Owner</h2>
+                <form>
+                  <div class="form-group">
+                    <label for="currentOwnerName">Name</label>
+                    <input type="text" id="currentOwnerName" name="currentOwnerName" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="currentOwnerAadhaar">Aadhaar No</label>
+                    <input type="text" id="currentOwnerAadhaar" name="currentOwnerAadhaar" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="currentOwnerHUID">HUID</label>
+                    <input type="text" id="currentOwnerHUID" name="currentOwnerHUID" required>
+                  </div>
+                  <div class="form-group" id="formotp" style="display: none;">
+					<label for="otp">Enter OTP:</label>
+					<input type="text" id="otp" required>
+				  </div>
+                </form>
+              
+              
+           </div>
+           <div class="ver-btn">
+			<button id="sentotp" onclick="sendotp()">Send OTP</button>
+            <button id="addhuidbtn" onclick="updateAadhar() " style="display: none;"><span>Sell to Jewellery</span></button>
+           </div>
+           <script>
+            var modal = document.getElementById("myModal");
+            var span = document.getElementsByClassName("close")[0];
+
+			function sendotp(){
+          document.getElementById("sentotp").style.display = "none";
+          document.getElementById("formotp").style.display = "block";
+          document.getElementById("addhuidbtn").style.display = "block";
+
+        }
+            
+            function openModal(message) {
+                document.getElementById("modalMessage").innerText = message;
+                modal.style.display = "block";
+            }
+            
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+            
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+            
+            </script>
+           <script src="../functions.js"></script>
+           
+</body>
+</html>
