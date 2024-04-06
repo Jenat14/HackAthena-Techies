@@ -10,6 +10,20 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+    <div>
+        <label  class="heading">Fetch Aadhar</label><br>
+            <label for="huidInput">Enter HUID:</label>
+            <input type="text" id="huidInput" required>
+            <br>
+            <button onclick="getAadhar()">Get Aadhar</button>
+            <br>
+            <div id="resultBox" style="display: none; margin-top: 10px; padding: 10px; background-color: #f0f0f0; border-radius: 5px;">
+                <strong>Result:</strong>
+                <p id="aadharResult"></p>
+            </div>
+    </div>
+    <style>
+        
+    </style>
 </body>
 </html>
