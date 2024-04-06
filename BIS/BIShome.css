@@ -1,8 +1,12 @@
+body{
+    background-color: rgba(0, 0, 0, 0.822);
+    color: #fff;
+}
 
-/* Style for the dropdown menu */
 .dropdown {
     position:relative;
     display: inline-block;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .dropdown-content {
@@ -30,15 +34,29 @@ table {
     width: 80%;
     border-collapse: collapse;
     margin: 20px auto;
+    color: #fff;
 }
 
 th, td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
+    color: #fff;
 }
 
 th {
-    background-color: #f2f2f2;
+    color: #f2f2f2;
 }
 
+
+.dropdown button{
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    outline: 0;
+    border: 0;
+    background-color:  #ffc107;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 100;
+}
