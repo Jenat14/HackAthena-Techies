@@ -211,13 +211,16 @@ $(document).ready(function() {
 function getHUIDs() {
     var aadhar = $('#aadharInput').val();
     
-    
-    contract.methods.getHUIDs(aadhar).call({ gas: 2000000 }).then(function(result) {
-        
-        $('#huidResult').html("HUIDs: " + result.join(', '));
-    }).catch(function(error) {
-        console.error("Error:", error);
-    });
+    if (aadhar) {
+        contract.methods.getHUIDs(aadhar).call({ gas: 2000000 }).then(function(result) {
+            $('#huidResult').html("HUIDs: " + result.join(', '));
+            $('#resultBox').show(); // Display the result box
+        }).catch(function(error) {
+            console.error("Error:", error);
+        });
+    } else {
+        alert("Please enter Aadhar Number");
+    }
 }
 function isHUIDCorresponding() {
 var aadhar1 = $('#aadharcheck').val();
