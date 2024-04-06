@@ -1,0 +1,33 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
+    background-color: rgba(0, 0, 0, 0.822);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #30226111;
+    margin-top: 5px;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    color: whitesmoke;
+}
+
+.home-button {
+    text-decoration:none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: #ffc107;
+    color: whitesmoke;
+    font-size: 18px;
+    margin: 5;
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    transition: background-color 0.3s;
+}
