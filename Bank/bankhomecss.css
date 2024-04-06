@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(0, 0, 0, 0.822);
+    margin: 0;
+    padding: 0;
+}
+.bank-home-container {
+    margin: 20px;
+    text-align: center;
+    margin-top: 150px;
+}
+h1{
+    color: whitesmoke;
+}
+form {
+    display: inline-block;
+    text-align: left;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 50%;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #ffc107;
+    color: #ffffff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-left: 40%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: white;
+    color: #ffc107;
+    border: 1px solid #ffc107;
+    
+}
