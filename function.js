@@ -4,7 +4,7 @@ console.log("Connected to Ethereum");
 $(document).ready(function() {
     
     web3 = new Web3(web3.currentProvider);
-    var contractAddress = "0xE9A920c81a15098A7c26d099bF1Bc1CECB5D7912"; 
+    var contractAddress = "0x7d062bE495e5ca49d82053314A4a13e34Aea7110"; 
     var contractABI =[
         {
             "inputs": [
@@ -314,4 +314,18 @@ function removeHUIDIfMapped() {
     .catch(function(error) {
         console.error("Error requesting accounts:", error);
     });
+}
+function getAadhar() {
+    var huid = $('#huidInput').val();
+    
+    if (huid) {
+        contract.methods.getAadhar(huid).call({ gas: 2000000 }).then(function(result) {
+            $('#aadharResult').html("Aadhar Number: " + result);
+            $('#resultBox').show(); // Display the result box
+        }).catch(function(error) {
+            console.error("Error:", error);
+        });
+    } else {
+        alert("Please enter HUID");
+    }
 }
