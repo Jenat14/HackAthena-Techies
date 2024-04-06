@@ -3,9 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>User HUID Information</title>
+    <link rel="stylesheet" href="./userhuidinfo.css">
 </head>
 <body>
-    
+    <header>
+        <h1>WELCOME USER !</h1>
+    </header>
+   
+    <div class="user-info-container">
+        <a href="../Homelogin/Homelogin.html"  class="home-button ">Home</a>
+        <a href="#popup-HUHW98" onclick="selection()" class="user-box ">HUHW98</a>
+        <a href="#popup-HUQE12" class="user-box">HUQE12</a>
+        <a href="#popup-HUMA23" class="user-box">HUMA23</a>
+    </div>
+   
+    <div id="popup-HUHW98" class="popup">
+        <input type="checkbox" id="close-HUHW98" class="close">
+        <label for="close-HUHW98" class="close-label">&times;</label>
+        <div class="popup-content">
+            <!-- Content for popup HUHW98 -->
+            <p><strong>Jewellery Registration No:</strong> 6409123487</p>
+            <p><strong>Assaying and Hallmarking Centre:</strong> QUALITY ASSAY & HALLMARKING CENTRE PRIVATE LIMITED</p>
+            <p><strong>AHC Number:</strong>SRO/RAHC/R-688493</p>
+            <p><strong>Article Type:</strong> Necklace</p>
+            <p><strong>Date of Hallmarking:</strong> 2023-04-15</p>
+            <p><strong>Purity:</strong> 22K916</p>
+            <button class="close-button" onclick="location.href='#'">Close</button>
+        </div>
+    </div>
+    <div id="popup-HUQE12" class="popup">
+        <!-- Content for popup HUQE12 -->
+        <input type="checkbox" id="close-HUQE12" class="close">
+        <label for="close-HUQE12" class="close-label">&times;</label>
+        <div class="popup-content">
+            <p><strong>Jewellery Registration No:</strong>7654387561</p>
+            <p><strong>Assaying and Hallmarking Centre:</strong>QUALITY ASSAY & HALLMARKING CENTRE PRIVATE LIMITED</p>
+            <p><strong>AHC Number:</strong>STO/FTRS/U-345687</p>
+            <p><strong>Article Type:</strong>Bangles</p>
+            <p><strong>Date of Hallmarking:</strong> 2023-09-11</p>
+            <p><strong>Purity:</strong> 22K916</p>
+            <button class="close-button" onclick="location.href='#'">Close</button>
+        </div>
+    </div>
+    <div id="popup-HUMA23" class="popup">
+        <!-- Content for popup HUMA23 -->
+        <input type="checkbox" id="close-HUMA23" class="close">
+        <label for="close-HUMA23" class="close-label">&times;</label>
+        <div class="popup-content">
+            <p><strong>Jewellery Registration No:</strong>8067543245</p>
+            <p><strong>Assaying and Hallmarking Centre:</strong>QUALITY ASSAY & HALLMARKING CENTRE PRIVATE LIMITED</p>
+            <p><strong>AHC Number:</strong>STT/JYTG/P-875634</p>
+            <p><strong>Article Type:</strong>Ring</p>
+            <p><strong>Date of Hallmarking:</strong> 2023-01-14</p>
+            <p><strong>Purity:</strong> 22K916</p>
+            <p style="color: red;"><strong>Currently pledged in: ABC Bank</strong></p>
+            <button class="close-button" onclick="location.href='#'">Close</button>
+        </div>
+    </div>
+   
 </body>
 </html>
