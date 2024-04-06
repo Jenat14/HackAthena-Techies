@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./BIShome.css">
+    <title>Indian States Dropdown</title>
+ 
+</head>
+<body>
+
+<!-- Dropdown container with an icon/button -->
+<div class="dropdown">
+    <button onclick="toggleDropdown()">Select State</button>
+    <div id="stateDropdown" class="dropdown-content">
+        <!-- Dropdown items (Indian state names) -->
+        <a href="#" onclick="showState('Andhra Pradesh')">Andhra Pradesh</a>
+        <a href="#" onclick="showState('Arunachal Pradesh')">Arunachal Pradesh</a>
+        <a href="#" onclick="showState('Assam')">Assam</a>
+        <a href="#" onclick="showState('Bihar')">Bihar</a>
+        <a href="#" onclick="showState('Chhattisgarh')">Chhattisgarh</a>
+        <a href="#" onclick="showState('Goa')">Goa</a>
+        <a href="#" onclick="showState('Gujarat')">Gujarat</a>
+        <a href="#" onclick="showState('Haryana')">Haryana</a>
+        <a href="#" onclick="showState('Himachal Pradesh')">Himachal Pradesh</a>
+        <a href="#" onclick="showState('Jharkhand')">Jharkhand</a>
+        <a href="#" onclick="showState('Karnataka')">Karnataka</a>
+        <a href="#" onclick="showState('Kerala')">Kerala</a>
+        <a href="#" onclick="showState('Madhya Pradesh')">Madhya Pradesh</a>
+        <a href="#" onclick="showState('Maharashtra')">Maharashtra</a>
+        <a href="#" onclick="showState('Manipur')">Manipur</a>
+        <a href="#" onclick="showState('Meghalaya')">Meghalaya</a>
+        <a href="#" onclick="showState('Mizoram')">Mizoram</a>
+        <a href="#" onclick="showState('Nagaland')">Nagaland</a>
+        <a href="#" onclick="showState('Odisha')">Odisha</a>
+        <a href="#" onclick="showState('Punjab')">Punjab</a>
+        <a href="#" onclick="showState('Rajasthan')">Rajasthan</a>
+        <a href="#" onclick="showState('Sikkim')">Sikkim</a>
+        <a href="#" onclick="showState('Tamil Nadu')">Tamil Nadu</a>
+        <a href="#" onclick="showState('Telangana')">Telangana</a>
+        <a href="#" onclick="showState('Tripura')">Tripura</a>
+        <a href="#" onclick="showState('Uttar Pradesh')">Uttar Pradesh</a>
+        <a href="#" onclick="showState('Uttarakhand')">Uttarakhand</a>
+        <a href="#" onclick="showState('West Bengal')">West Bengal</a>
+        <!-- Add more states as needed -->
+    </div>
+</div>
+
+<!-- Container for displaying state-specific information -->
+<div id="stateInfoContainer">
+    <!-- State-specific information will be dynamically inserted here -->
+</div>
+
+<script>
+    // Function to toggle dropdown visibility
+    function toggleDropdown() {
+        var dropdown = document.getElementById("stateDropdown");
+        dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+    }
+
+    // Function to show state-specific information
+    function showState(stateName) {
+        var stateInfoContainer = document.getElementById("stateInfoContainer");
+        var stateInfoHTML = getStateInfoHTML(stateName); // Get HTML content based on state
+        stateInfoContainer.innerHTML = stateInfoHTML; // Display state-specific information
+        toggleDropdown(); // Hide dropdown after selecting a state
+    }
+
+    // Function to generate state-specific HTML content
+    function getStateInfoHTML(stateName) {
+        // This is a placeholder function to generate dynamic content based on the selected state
+        // You can customize this function to load data from a backend or provide specific content for each state
+        switch (stateName) {
+            case 'Kerala':
+                return `
+                    <h1>Jewellery Information in Kerala</h1>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Jewellery ID</th>
+                                <th>Jeweller Name</th>
+                                <th>District</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>ABC Jewelers</td>
+                                <td>Thiruvananthapuram</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>XYZ Jewelers</td>
+                                <td>Kochi</td>
+                            </tr>
+                            <!-- Add more rows as needed -->
+                        </tbody>
+                    </table>
+                `;
+            // Add cases for other states with respective HTML content
+            default:
+                return `<h1>Jewellery Information in ${stateName}</h1><p>No information available for ${stateName}.</p>`;
+        }
+    }
+</script>
+
+</body>
+</html>
