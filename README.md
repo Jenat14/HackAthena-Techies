@@ -16,19 +16,19 @@ We are proposing a new system for gold exchange in India. The proposed system is
 
 4. **Purity Assessment:** The system allows for precise assessment of gold purity, aiding in accurate valuation and lending decisions using the data collected from XRF machines.
 
-5. **Reduction in Gold Smuggling:** Linking of Aadhar ID with HUID reduces the risk of gold smuggling by creating a digital trail for all gold transactions and complete transparency regarding their ownership.
+5. **Reduction in Gold Smuggling and other related crimes:** Linking of Aadhar ID with HUID reduces the risk of gold smuggling by creating a digital trail for all gold transactions and complete transparency regarding their ownership.
 
 6. **Transparency and Purity Assurance:** The system's transparency and purity assurance features plays a vital role in fostering trust and confidence among users.
 
 7. **Fast Gold Loan Processing:** The system facilitates faster processing of gold loans by providing instant access to verified ownership and purity information.
 
-8. **Quick Victim Redressal:** Syste  facilitates the identification of the rightfull owner of the gold in case of theft and recovery, making the job easier for the Court/Police.
+8. **Quick Victim Redressal:** System  facilitates the identification of the rightfull owner of the gold in case of theft and recovery, making the job easier for the Court/Police.
 
 9. **Efficient Gold Exchange and selling:** The system streamlines the exchange of gold assets from jewellery, making transactions quicker and more efficient.
 
 10. **Web3 Technologies Integration:** The system is built on Ethereum blockchain.
 
-11. ****
+11. **Complete Transaction History:** The system helps to mainatain complete records regarding the ownership and transaction of the gold ornament.
 
 12. **Trustworthy Environment:** The system creates a trustworthy and transparent environment for handling gold, ensuring a reliable platform for all stakeholders.
 
