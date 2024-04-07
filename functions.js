@@ -186,7 +186,7 @@ $(document).ready(function() {
                     "name": "aadhar",
                     "type": "uint256"
                 },
-                {
+                { 
                     "internalType": "string",
                     "name": "huid",
                     "type": "string"
