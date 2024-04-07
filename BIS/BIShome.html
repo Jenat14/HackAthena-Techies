@@ -14,14 +14,14 @@
     <h1>BUREAU OF INDIAN STANDARDS</h1> 
     <a href="../Homelogin/Homelogin.html"  class="home-button ">Home</a>  
    
-<!-- Dropdown container with an icon/button -->
+
 </div>
 <div class="dropdown">
     
 
     <button onclick="toggleDropdown()">SELECT STATE</button>
     <div id="stateDropdown" class="dropdown-content">
-        <!-- Dropdown items (Indian state names) -->
+        
         <a href="#" onclick="showState('Andhra Pradesh')">Andhra Pradesh</a>
         <a href="#" onclick="showState('Arunachal Pradesh')">Arunachal Pradesh</a>
         <a href="#" onclick="showState('Assam')">Assam</a>
@@ -50,37 +50,34 @@
         <a href="#" onclick="showState('Uttar Pradesh')">Uttar Pradesh</a>
         <a href="#" onclick="showState('Uttarakhand')">Uttarakhand</a>
         <a href="#" onclick="showState('West Bengal')">West Bengal</a>
-        <!-- Add more states as needed -->
+        
     </div>
     <a href="owner.html"><button type="submit" onclick=""><span>FIND OWNER</span></button></a>
     <a href="huidlisting.html"><button type="submit" onclick=""><span>HUID LISTING</span></button></a>
 </div>
 
 
-<!-- Container for displaying state-specific information -->
+
 <div id="stateInfoContainer">
-    <!-- State-specific information will be dynamically inserted here -->
+   
 </div>
 
 <script>
-    // Function to toggle dropdown visibility
+    
     function toggleDropdown() {
         var dropdown = document.getElementById("stateDropdown");
         dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
     }
 
-    // Function to show state-specific information
     function showState(stateName) {
         var stateInfoContainer = document.getElementById("stateInfoContainer");
-        var stateInfoHTML = getStateInfoHTML(stateName); // Get HTML content based on state
-        stateInfoContainer.innerHTML = stateInfoHTML; // Display state-specific information
-        toggleDropdown(); // Hide dropdown after selecting a state
+        var stateInfoHTML = getStateInfoHTML(stateName); 
+        stateInfoContainer.innerHTML = stateInfoHTML; 
+        toggleDropdown(); 
     }
 
-    // Function to generate state-specific HTML content
     function getStateInfoHTML(stateName) {
-        // This is a placeholder function to generate dynamic content based on the selected state
-        // You can customize this function to load data from a backend or provide specific content for each state
+       
         switch (stateName) {
             case 'Kerala':
                 return `
@@ -148,7 +145,7 @@
                         </tbody>
                     </table>
                 `;
-            // Add cases for other states with respective HTML content
+            
             default:
                 return `<h1>Jewellery Information in ${stateName}</h1><p>No information available for ${stateName}.</p>`;
         }
