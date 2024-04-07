@@ -6,206 +6,231 @@ $(document).ready(function() {
     web3 = new Web3(web3.currentProvider);
     var contractAddress = "0x750640C314C210A36ab9bf071b007826a9ee8829"; 
     var contractABI =[
-        {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "aadhar",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "string",
-                    "name": "huid",
-                    "type": "string"
-                }
-            ],
-            "name": "addHUID",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "anonymous": false,
-            "inputs": [
-                {
-                    "indexed": true,
-                    "internalType": "uint256",
-                    "name": "aadhar",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "string",
-                    "name": "huid",
-                    "type": "string"
-                }
-            ],
-            "name": "HUIDAdded",
-            "type": "event"
-        },
-        {
-            "anonymous": false,
-            "inputs": [
-                {
-                    "indexed": true,
-                    "internalType": "uint256",
-                    "name": "aadhar",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "string",
-                    "name": "huid",
-                    "type": "string"
-                }
-            ],
-            "name": "HUIDRemoved",
-            "type": "event"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "aadhar",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "string",
-                    "name": "huid",
-                    "type": "string"
-                }
-            ],
-            "name": "removeHUID",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "aadhar",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "string",
-                    "name": "huid",
-                    "type": "string"
-                }
-            ],
-            "name": "removeHUIDIfMapped",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "name": "aadharToHUIDs",
-            "outputs": [
-                {
-                    "internalType": "string",
-                    "name": "",
-                    "type": "string"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "string",
-                    "name": "huid",
-                    "type": "string"
-                }
-            ],
-            "name": "getAadhar",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "aadhar",
-                    "type": "uint256"
-                }
-            ],
-            "name": "getHUIDs",
-            "outputs": [
-                {
-                    "internalType": "string[]",
-                    "name": "",
-                    "type": "string[]"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "string",
-                    "name": "",
-                    "type": "string"
-                }
-            ],
-            "name": "huidToAadhar",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "aadhar",
-                    "type": "uint256"
-                },
-                { 
-                    "internalType": "string",
-                    "name": "huid",
-                    "type": "string"
-                }
-            ],
-            "name": "isHUIDCorresponding",
-            "outputs": [
-                {
-                    "internalType": "bool",
-                    "name": "",
-                    "type": "bool"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
-        }
-    ]; 
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "huid",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "oldAadhar",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "newAadhar",
+				"type": "uint256"
+			}
+		],
+		"name": "AadharUpdated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "aadhar",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "huid",
+				"type": "string"
+			}
+		],
+		"name": "HUIDAdded",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "aadhar",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "huid",
+				"type": "string"
+			}
+		],
+		"name": "HUIDRemoved",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "aadharToHUIDs",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "aadhar",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "huid",
+				"type": "string"
+			}
+		],
+		"name": "addHUID",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "huid",
+				"type": "string"
+			}
+		],
+		"name": "getAadhar",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "aadhar",
+				"type": "uint256"
+			}
+		],
+		"name": "getHUIDs",
+		"outputs": [
+			{
+				"internalType": "string[]",
+				"name": "",
+				"type": "string[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"name": "huidToAadhar",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "aadhar",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "huid",
+				"type": "string"
+			}
+		],
+		"name": "isHUIDCorresponding",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "aadhar",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "huid",
+				"type": "string"
+			}
+		],
+		"name": "removeHUID",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "newAadhar",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "huid",
+				"type": "string"
+			}
+		],
+		"name": "updateAadhar",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]; 
 
-    contract = new web3.eth.Contract(contractABI, contractAddress);
+   contract = new web3.eth.Contract(contractABI, contractAddress);
 });
 
 function getHUIDs() {
@@ -295,14 +320,14 @@ function updateAadhar(aadharN, Ownerhuid) {
         console.error("Error requesting accounts:", error);
     });
 }
-function removeHUIDIfMapped() {
+function removeHUID() {
     var currentOwnerAadhaar = $('#currentOwnerAadhaar').val();
     var currentOwnerHUID = $('#currentOwnerHUID').val();
     ethereum.request({ method: 'eth_requestAccounts' })
     .then(function(accounts) {
         var userAccount = accounts[0];
 
-        contract.methods.removeHUIDIfMapped(currentOwnerAadhaar, currentOwnerHUID).send({ from: userAccount })
+        contract.methods.removeHUID(currentOwnerAadhaar, currentOwnerHUID).send({ from: userAccount })
         .then(function(receipt) {
             // If successful, display success message
             console.log("HUID removed successfully.");
