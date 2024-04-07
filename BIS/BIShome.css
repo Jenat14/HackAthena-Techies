@@ -60,3 +60,12 @@ th {
     font-size: 15px;
     font-weight: 100;
 }
+h1{
+    color: #ffc107;
+}
+.container{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 20vh
+}
