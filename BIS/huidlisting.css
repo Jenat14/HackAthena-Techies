@@ -20,6 +20,34 @@ div {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.home-button {
+    text-decoration:none;
+    padding: 10px 20px;
+    border-radius: 11px;
+    background-color: #ffc107;
+    color: whitesmoke;
+    font-size: 18px;
+    margin: 5;
+    position: absolute;
+    top: 60px;
+    right: 100px;
+    transition: background-color 0.3s;
+}
+.back-button {
+    text-decoration:none;
+    padding: 10px 20px;
+    border-radius: 11px;
+    background-color: #ffc107;
+    color: whitesmoke;
+    font-size: 18px;
+    margin: 5;
+    position: absolute;
+    top: 60px;
+    right: 1290px;
+    transition: background-color 0.3s;
+}
+
+
 label {
     font-weight: 400;
     margin-bottom: 5px;
