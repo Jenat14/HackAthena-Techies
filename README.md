@@ -1,5 +1,8 @@
+
+
 # GOLDERA
-**Gateway to the Era of Secure Gold Transfer** <br/>
+![alt text](assets/img/banner.png)
+
 
 ## Idea
 We are proposing a new system for gold exchange in India. The proposed system is an end-to-end digital process anchored on linking **Aadhar IDs and Hallmark Unique Identification number(HUID)**. Our system prioritizes security through advanced encryption and **Blockchain technology**, ensuring airtight protection for all transactions and data. Additionally, we emphasize transparency by providing users with clear visibility into ownership verification and purity assessment processes, fostering trust and reliability in the gold exchange ecosystem. We hope this project could build an entirely new ecosystem for the gold transactions in India..
