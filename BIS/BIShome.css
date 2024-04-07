@@ -44,7 +44,7 @@ body{
     background-color: #f1f1f1;
 }
 
-/* Style for the table */
+
 table {
     width: 80%;
     border-collapse: collapse;
@@ -85,6 +85,6 @@ h1{
    height: 20vh
 }
 .view-link {
-    color: green; /* Change 'green' to your desired color */
-    text-decoration: none; /* Optional: Remove underline */
+    color: green; 
+    text-decoration: none; 
 }
