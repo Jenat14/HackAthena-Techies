@@ -336,7 +336,7 @@ function removeHUID() {
         .catch(function(error) {
             // If error occurs, display the reason
             console.error("Error: ", error.message);
-            alert("Error: " + error.message);
+            alert("HUID removal failed");
         });
     })
     .catch(function(error) {
