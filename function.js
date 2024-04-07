@@ -4,32 +4,25 @@ console.log("Connected to Ethereum");
 $(document).ready(function() {
     
     web3 = new Web3(web3.currentProvider);
-    var contractAddress = "0x21c4F7ee43E578133d928CD22C53eb5FD673d832"; 
+    var contractAddress = "0xE9A920c81a15098A7c26d099bF1Bc1CECB5D7912"; 
     var contractABI =[
         {
-            "anonymous": false,
             "inputs": [
                 {
-                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "aadhar",
+                    "type": "uint256"
+                },
+                {
                     "internalType": "string",
                     "name": "huid",
                     "type": "string"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "oldAadhar",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "newAadhar",
-                    "type": "uint256"
                 }
             ],
-            "name": "AadharUpdated",
-            "type": "event"
+            "name": "addHUID",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
         },
         {
             "anonymous": false,
@@ -49,6 +42,61 @@ $(document).ready(function() {
             ],
             "name": "HUIDAdded",
             "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "aadhar",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "huid",
+                    "type": "string"
+                }
+            ],
+            "name": "HUIDRemoved",
+            "type": "event"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "aadhar",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "string",
+                    "name": "huid",
+                    "type": "string"
+                }
+            ],
+            "name": "removeHUID",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "aadhar",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "string",
+                    "name": "huid",
+                    "type": "string"
+                }
+            ],
+            "name": "removeHUIDIfMapped",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
         },
         {
             "inputs": [
@@ -72,24 +120,6 @@ $(document).ready(function() {
                 }
             ],
             "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "aadhar",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "string",
-                    "name": "huid",
-                    "type": "string"
-                }
-            ],
-            "name": "addHUID",
-            "outputs": [],
-            "stateMutability": "nonpayable",
             "type": "function"
         },
         {
@@ -171,24 +201,6 @@ $(document).ready(function() {
                 }
             ],
             "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "newAadhar",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "string",
-                    "name": "huid",
-                    "type": "string"
-                }
-            ],
-            "name": "updateAadhar",
-            "outputs": [],
-            "stateMutability": "nonpayable",
             "type": "function"
         }
     ]; 
@@ -274,6 +286,29 @@ function updateAadhar(aadharN, Ownerhuid) {
         
         .catch(function (error) {
             console.error("Error:", error);
+        });
+    })
+    .catch(function(error) {
+        console.error("Error requesting accounts:", error);
+    });
+}
+function removeHUIDIfMapped() {
+    var currentOwnerAadhaar = $('#currentOwnerAadhaar').val();
+    var currentOwnerHUID = $('#currentOwnerHUID').val();
+    ethereum.request({ method: 'eth_requestAccounts' })
+    .then(function(accounts) {
+        var userAccount = accounts[0];
+
+        contract.methods.removeHUIDIfMapped(currentOwnerAadhaar, currentOwnerHUID).send({ from: userAccount })
+        .then(function(receipt) {
+            // If successful, display success message
+            console.log("HUID removed successfully.");
+            alert("HUID removed successfully.");
+        })
+        .catch(function(error) {
+            // If error occurs, display the reason
+            console.error("Error: ", error.message);
+            alert("Error: " + error.message);
         });
     })
     .catch(function(error) {
