@@ -165,7 +165,10 @@
                     <label for="currentOwnerHUID">HUID</label>
                     <input type="text" id="currentOwnerHUID" name="currentOwnerHUID" required>
                   </div>
-                  
+                  <div class="form-group" id="formotp1" style="display: none;">
+                    <label for="otp">Enter OTP:</label>
+                    <input type="text" id="otp" required>
+                  </div>
                 </form>
               </div>
               <div class="container col-md-2" style="display: flex; justify-content: center; align-items: center;">
@@ -189,15 +192,29 @@
                         <span class="close">&times;</span>
                         <p id="modalMessage"></p>
                     </div>
-                </div>
+                  </div>
+                  <div class="form-group" id="formotp" style="display: none;">
+                    <label for="otp">Enter OTP:</label>
+                    <input type="text" id="otp" required>
+                  </div>
                 </form>
               </div>
                <div class="col-md-1"></div> 
            </div>
            <div class="ver-btn">
-            <button onclick="updateAadhar()" type="submit"><span>Transfer Ownership</span></button>
+            <button id="sentotp" onclick="sendotp()">Send OTP</button>
+              <button id="addhuidbtn" onclick="updateAadhar()"  style="display: none;">Transfer Ownership</button>
+            
            </div>
            <script>
+                function sendotp(){
+            document.getElementById("sentotp").style.display = "none";
+            document.getElementById("formotp").style.display = "block";
+            document.getElementById("formotp1").style.display = "block";
+            document.getElementById("addhuidbtn").style.display = "block";
+
+            }
+       
             var modal = document.getElementById("myModal");
             var span = document.getElementsByClassName("close")[0];
             
