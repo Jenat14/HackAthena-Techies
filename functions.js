@@ -4,7 +4,7 @@ console.log("Connected to Ethereum");
 $(document).ready(function() {
     
     web3 = new Web3(web3.currentProvider);
-    var contractAddress = "0x7d062bE495e5ca49d82053314A4a13e34Aea7110"; 
+    var contractAddress = "0x750640C314C210A36ab9bf071b007826a9ee8829"; 
     var contractABI =[
         {
             "inputs": [
@@ -186,7 +186,7 @@ $(document).ready(function() {
                     "name": "aadhar",
                     "type": "uint256"
                 },
-                {
+                { 
                     "internalType": "string",
                     "name": "huid",
                     "type": "string"
