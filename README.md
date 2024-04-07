@@ -33,6 +33,7 @@ We are proposing a new system for gold exchange in India. The proposed system is
 12. **Trustworthy Environment:** The system creates a trustworthy and transparent environment for handling gold, ensuring a reliable platform for all stakeholders.
 
 ## Demo video
+[link to video](https://drive.google.com/file/d/1lpWhkqe-kuYUxST-bJcRVHx1Gfy7N7o1/view?usp=sharing)
 
 ## Scope Of Contribution
 1. Extend the platform's capabilities to support cross-border trading of gold assets, integrating with global marketplaces and complying with international regulations.
