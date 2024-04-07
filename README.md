@@ -8,7 +8,7 @@
 We are proposing a new system for gold exchange in India. The proposed system is an end-to-end digital process anchored on linking **Aadhar IDs and Hallmark Unique Identification number(HUID)**. Our system prioritizes security through advanced encryption and **Blockchain technology**, ensuring airtight protection for all transactions and data. Additionally, we emphasize transparency by providing users with clear visibility into ownership verification and purity assessment processes, fostering trust and reliability in the gold exchange ecosystem. We hope this project could build an entirely new ecosystem for the gold transactions in India..
 
 ## Features
-1. **Aadhar-HUID Linkage:**** The jewellery owners and bank can associate their HUIDs with Aadhar IDs during the selling process to ensure transparency and traceability.
+1. **Aadhar-HUID Linkage:** The jewellery owners and bank can associate their HUIDs with Aadhar IDs during the selling process to ensure transparency and traceability.
 
 2. **Blockchain Security:** Blockchain technology has been used for secure and immutable ownership records, ensuring the authenticity and integrity of gold assets.
 
@@ -31,6 +31,8 @@ We are proposing a new system for gold exchange in India. The proposed system is
 11. **Complete Transaction History:** The system helps to mainatain complete records regarding the ownership and transaction of the gold ornament.
 
 12. **Trustworthy Environment:** The system creates a trustworthy and transparent environment for handling gold, ensuring a reliable platform for all stakeholders.
+
+## Demo video
 
 ## Scope Of Contribution
 1. Extend the platform's capabilities to support cross-border trading of gold assets, integrating with global marketplaces and complying with international regulations.
